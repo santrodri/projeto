@@ -4,173 +4,140 @@
     --more-light:#A6A6A6;
     --ultra-more-light:#F2F2F2;
     --buttom-color:linear-gradient(#F2D750,#fbe578c0); 
+}
+ 
 
+@font-face {
+    font-family: 'header';
+    src: url('fonts/Prata-Regular.ttf');
 }
 
 @font-face {
-    font-family: noto-serif;
-    src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf');
+    font-family: 'body';
+    src: url('fonts/Inter-VariableFont_slntwght.ttf');
 }
 
 /* start general configurations */
 body{
-    background-color: var(--black);
-    color: var(--more-light);
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-row-gap: 40px;
-    font-family: 'noto-serif';
+    grid-template-columns:repeat(12,1fr);
+    row-gap: 30px;
+    background-color: var(--black);
+    min-width: 530px ;
 }
 
-a {
+*{
+    font-family: 'body';
     color: var(--more-light);
+    font-size: small;
 }
+
+h1, h2{
+    font-family: 'header';
+    color: var(--ultra-more-light);
+    font-size: x-large;
+}
+   
 
 button{
     height: 40px;
     width: 100px;
+    transition: ease-in 0.4s;
     background-image: var(--buttom-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: ease-out 0.5s;
+    color: black;
 }
 
 button:hover{
-    transform: scale(1.1);
- 
+    transform: scale(1.08);
+}
+
+
+article, footer{
+    grid-column: 2 / 12;
 }
 
 /* end general configurations */
 
-
-/* start of header */
-header{ 
-    grid-column: 2 / 12; 
-    margin: 20px 0px ;
+/* start header */
+header{
+    grid-column: 2 / 12;
+    padding: 20px 0px;
 }
 
-header nav{
+nav,nav > ul{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
+    gap: 20px;
 }
-
-
-header > nav ul{
-    display: flex;
-}
-
-
-header > nav ul> li{
-    margin: 15px;
-}
-
-/* end of header */
+/* end header */
 /* start about */
 .about{
     grid-column: 2 / 8;
+
 }
 
 .about h1{
-    font-size: xx-large;
+    font-size: 50px;
 }
 
 .about p{
-    font-family: 'noto-serif';
-    font-size: large;
+    font-size: 18px;
 }
-/* end of about */
-/* start partner-companies */
-.partner-companies {
-    grid-column: 2 / 12;
-}
-
-.partner-companies > ul {
+/* end about */
+/* start user-companies  */
+.user-companies ul{
     display: flex;
+    flex-wrap: wrap-reverse;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
-
-.partner-companies > ul > li{
-    padding: 0px 4px;
-} 
-/* end partner-companies */
-/* start partner companies */
-.partner-sites{
-    grid-column: 2 / 12;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.partner-sites span{
-    padding-bottom: 20px;
-}
-.partner-sites h2{
-    padding-bottom: 4px;
-}
-
-.partner-sites img{
-    border-radius: 10px;
-}
-
-.partner-sites span{
-    max-width: 540px;
-}
-
-/* end partner companies */
-/* start co-founder */
+/* end user-companies  */
+/* start services */
+.services,
 .co-founder{
     grid-column: 1 / 13;
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    font-family: noto-serif;
-    background-color: var(--black-light);
-    padding: 40px 0px;
 }
 
-.co-founder .first-page{
-    grid-column: 2 / 6;
+.services > section > *,
+.co-founder > section > * {
+    max-width: 530px;
+    margin: 4px 0px;
 }
 
-.co-founder .second-page{
-    grid-column: 7/ 12;
+.services .first-page,
+.co-founder .first-page {
+   grid-column: 2 / 7;
+}
+.services .second-page,
+.co-founder .second-page {
+    grid-column: 7 / 12;
 }
 
-.co-founder p,h2{
-    margin-bottom: 12px;
+.co-founder{
+    background-color: #353840;
 }
 
-/* end co-founder */
-/* start work wiht me */
+.co-founder section > *{
+    margin: 20px 0px;
+}
+
 .work-with-me{
-    grid-column: 2 / 6; 
-}
-
-.work-with-me > * {
-    margin: 8px 0px;
-}
-footer{
-    grid-column: 1 / 13;
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    padding: 10px 0px;
-    background-color: var(--black-light);
-}
-span{
-    grid-column: 2 / 12;
+    row-gap: 10px;
 }
 
-footer span{
+footer{
     display: flex;
     justify-content: space-between;
 }
 
-footer span ul{
+footer > ul{
     display: flex;
-    justify-content: end;
-    grid-gap: 4px;
+    column-gap: 10px;
 }
 
-/* end work wiht me */
-/* end main */
+footer a{
+    font-size: large;
+}
+/* end services */
